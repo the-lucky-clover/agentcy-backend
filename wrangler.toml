@@ -1,0 +1,20 @@
+name = "agentcy-one-backend"
+main = "src/worker.py"
+compatibility_date = "2024-01-01"
+
+[env.production]
+name = "agentcy-one-backend"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_name = "agentcy-one-db"
+database_id = "your-database-id"
+
+[env.production.vars]
+GEMINI_API_KEY = "AIzaSyAEkn-OTMM4b7h8r3GNV4CDhqKYoaVCilo"
+FLASK_ENV = "production"
+SECRET_KEY = "agentcy-one-tactical-ops-2024"
+
+[[env.production.routes]]
+pattern = "api.agentcy.one/*"
+zone_name = "agentcy.one"
