@@ -1,5 +1,9 @@
-// agentcy-backend/src/index.ts
-import { Router } from 'itty-router';
+// src/index.ts
+
+// Silence TypeScript errors for itty-router
+declare module "itty-router";
+
+import { Router } from "itty-router";
 import { Database } from '@cloudflare/d1';
 
 // Create a new router
