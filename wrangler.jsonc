@@ -1,30 +1,68 @@
 {
   // Worker name
-  "name": "worker-name",
+  "name": "agency-backend",
 
   // Ensure compatibility with the latest Workers runtime
   "compatibility_date": "2025-08-23",
 
-  // Main entry file
+  // Main entry file for TypeScript dev (can switch to Python in production)
   "main": "src/index.ts",
 
   // Bindings for services
   "d1_databases": [
     {
-      "binding": "DB", // what you reference in code (env.DB)
-      "database_id": "64f2b1de-7bd7-448a-9680-ddb776bbd704"
+      "binding": "DB",
+      "database_id": "64f2b1de-7bd7-448a-9680-ddb776bbd704",
+      "database_name": "agentcy-one-db"
     }
   ],
 
   "r2_buckets": [
     {
-      "binding": "MY_BUCKET", // what you reference in code (env.MY_BUCKET)
-      "bucket_name": "my-r2-bucket"
+      "binding": "MY_R2_BUCKET",
+      "bucket_name": "agentcy-r2-bucket"
     }
   ],
 
-  // Optional static assets directory (if using Pages-like static hosting)
+  // Optional static assets directory
   "assets": {
     "directory": "./dist"
+  },
+
+  // Production environment configuration
+  "env": {
+    "production": {
+      "name": "agency-backend",
+      "main": "src/worker.py",
+      "compatibility_date": "2024-01-01",
+
+      "d1_databases": [
+        {
+          "binding": "DB",
+          "database_id": "64f2b1de-7bd7-448a-9680-ddb776bbd704",
+          "database_name": "agentcy-one-db"
+        }
+      ],
+
+      "r2_buckets": [
+        {
+          "binding": "MY_R2_BUCKET",
+          "bucket_name": "agentcy-r2-bucket"
+        }
+      ],
+
+      "vars": {
+        "GEMINI_API_KEY": "AIzaSyAEkn-OTMM4b7h8r3GNV4CDhqKYoaVCilo",
+        "FLASK_ENV": "production",
+        "SECRET_KEY": "agentcy-one-tactical-ops-2024"
+      },
+
+      "routes": [
+        {
+          "pattern": "api.agentcy.one/*",
+          "zone_name": "agentcy.one"
+        }
+      ]
+    }
   }
 }
