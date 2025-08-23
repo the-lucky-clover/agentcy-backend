@@ -8,7 +8,7 @@ name = "agentcy-one-backend"
 [[env.production.d1_databases]]
 binding = "DB"
 database_name = "agentcy-one-db"
-database_id = "your-database-id"
+database_id = "64f2b1de-7bd7-448a-9680-ddb776bbd704"
 
 [env.production.vars]
 GEMINI_API_KEY = "AIzaSyAEkn-OTMM4b7h8r3GNV4CDhqKYoaVCilo"
