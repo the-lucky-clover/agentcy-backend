@@ -6,7 +6,7 @@ compatibility_date = "2025-08-22"
 [[d1_databases]]
 binding = "DB"
 database_id = "64f2b1de-7bd7-448a-9680-ddb776bbd704"
-database_name = "agency_backend_db"
+database_name = "agentcy-one-db"
 
 # Production Environment Config
 [env.production]
