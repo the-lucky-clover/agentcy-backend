@@ -1,0 +1,27 @@
+{
+  "name": "worker-name",
+  "compatibility_date": "2025-08-23",
+
+  // Entry point for your Worker
+  "main": "src/index.ts",
+
+  // Serve static assets (optional, remove if not needed)
+  "assets": {
+    "directory": "./dist"
+  },
+
+  // Bind your D1 production database
+  "d1_databases": [
+    {
+      "binding": "DB", // you’ll use env.DB in your Worker
+      "database_id": "64f2b1de-7bd7-448a-9680-ddb776bbd704"
+    }
+  ],
+
+  // Optional: configure environments
+  "env": {
+    "production": {
+      "name": "worker-name-prod"
+    }
+  }
+}
