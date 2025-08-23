@@ -1,9 +1,18 @@
-name = "agentcy-one-backend"
-main = "src/worker.py"
-compatibility_date = "2024-01-01"
+# Base Config
+name = "agency-backend"
+main = "src/index.ts"   # Default TypeScript entry (switchable to Python if needed)
+compatibility_date = "2025-08-22"
 
+[[d1_databases]]
+binding = "DB"
+database_id = "64f2b1de-7bd7-448a-9680-ddb776bbd704"
+database_name = "agency_backend_db"
+
+# Production Environment Config
 [env.production]
-name = "agentcy-one-backend"
+name = "agentcy-backend"
+main = "src/worker.py"   # Production runs Python worker
+compatibility_date = "2024-01-01"
 
 [[env.production.d1_databases]]
 binding = "DB"
