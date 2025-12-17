@@ -1,0 +1,24 @@
+# Wrangler configuration file
+# Environment variables and sensitive keys should be set via secrets, not in this file
+
+name = "agentcy-backend"
+type = "javascript"
+account_id = ""
+workers_dev = true
+route = ""
+zone_id = ""
+
+[env.production]
+name = "agentcy-backend-prod"
+routes = []
+
+[env.staging]
+name = "agentcy-backend-staging"
+routes = []
+
+# Use 'wrangler secret put' to securely store sensitive values
+# Examples:
+# - Database connection strings
+# - API keys
+# - Authentication tokens
+# - Third-party service credentials
